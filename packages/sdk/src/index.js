@@ -12,3 +12,8 @@ export {
   CatalogQuery,
   CatalogResult
 } from "./catalog/index.js";
+
+export {
+  MediaResolver,
+  ResolverResult
+} from "./resolver/index.js";
