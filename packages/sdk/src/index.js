@@ -8,5 +8,6 @@ export {
 
 export {
   CatalogService,
-  MediaItem
+  MediaItem,
+  CatalogQuery
 } from "./catalog/index.js";

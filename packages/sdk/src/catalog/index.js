@@ -5,3 +5,7 @@ export {
 export {
   MediaItem
 } from "./media-item.js";
+
+export {
+  CatalogQuery
+} from "./catalog-query.js";
