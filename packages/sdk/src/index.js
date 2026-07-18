@@ -5,3 +5,7 @@ export {
   ProviderManifest,
   ProviderCapabilities
 } from "./provider/index.js";
+
+export {
+  CatalogService
+} from "./catalog/index.js";
