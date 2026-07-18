@@ -1,0 +1,8 @@
+{
+  "name": "@magion/engine",
+  "version": "0.1.0",
+  "description": "Media processing engine for Magion Framework",
+  "type": "module",
+  "main": "./src/index.js",
+  "license": "MIT"
+}
