@@ -1,6 +1,8 @@
 import {
-  CatalogService
+  CatalogService,
+  CatalogQuery
 } from "@magion/sdk";
+
 
 import {
   demoCatalog
@@ -29,16 +31,78 @@ export class DemoCatalogService
 
   async search(query) {
 
-    const keyword =
-      String(query).toLowerCase();
+
+    const catalogQuery =
+      query instanceof CatalogQuery
+        ? query
+        : new CatalogQuery({
+            query
+          });
 
 
-    return demoCatalog.filter(
-      item =>
-        item.title
-          .toLowerCase()
-          .includes(keyword)
-    );
+    let results =
+      demoCatalog;
+
+
+    if (
+      catalogQuery.query
+    ) {
+
+      const keyword =
+        catalogQuery.query
+          .toLowerCase();
+
+
+      results =
+        results.filter(
+          item =>
+            item.title
+              .toLowerCase()
+              .includes(keyword)
+        );
+
+    }
+
+
+    if (
+      catalogQuery.type
+    ) {
+
+      results =
+        results.filter(
+          item =>
+            item.type === catalogQuery.type
+        );
+
+    }
+
+
+    if (
+      catalogQuery.offset
+    ) {
+
+      results =
+        results.slice(
+          catalogQuery.offset
+        );
+
+    }
+
+
+    if (
+      catalogQuery.limit
+    ) {
+
+      results =
+        results.slice(
+          0,
+          catalogQuery.limit
+        );
+
+    }
+
+
+    return results;
 
   }
 
