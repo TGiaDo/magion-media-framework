@@ -1,0 +1,8 @@
+{
+  "name": "@magion/sdk",
+  "version": "0.1.0",
+  "description": "Developer SDK for Magion Media Framework",
+  "type": "module",
+  "main": "./src/index.js",
+  "license": "MIT"
+}
