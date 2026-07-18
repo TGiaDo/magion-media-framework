@@ -1,4 +1,7 @@
-export { MagionAddon } from "./addon.js";
+export {
+  MagionAddon,
+  AddonManifest
+} from "./addon/index.js";
 
 export {
   MediaProvider,
