@@ -1,0 +1,8 @@
+{
+  "name": "@magion/core",
+  "version": "0.1.0",
+  "description": "Core runtime engine for Magion Media Framework",
+  "type": "module",
+  "main": "./src/index.js",
+  "license": "MIT"
+}
