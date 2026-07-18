@@ -1,0 +1,12 @@
+{
+  "name": "@magion/demo",
+  "version": "0.1.0",
+  "description": "Demo media catalog for Magion Framework",
+  "type": "module",
+  "main": "./src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@magion/sdk": "workspace:*",
+    "@magion/core": "workspace:*"
+  }
+}
