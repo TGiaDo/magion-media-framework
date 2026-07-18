@@ -1,0 +1,8 @@
+{
+  "name": "@magion/addons",
+  "version": "0.1.0",
+  "description": "Addon runtime system for Magion Framework",
+  "type": "module",
+  "main": "./src/index.js",
+  "license": "MIT"
+}
