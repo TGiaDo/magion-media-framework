@@ -41,13 +41,13 @@ export class MagionRuntime {
   }
 
 
-  getCatalog(name) {
-    return this.catalogs.get(name);
+  getCatalogs() {
+    return this.catalogs.getAll();
   }
 
 
-  getCatalogs() {
-    return this.catalogs.getAll();
+  getCatalog(name) {
+    return this.catalogs.get(name);
   }
 
 

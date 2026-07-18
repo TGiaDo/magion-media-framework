@@ -5,8 +5,12 @@ import { DemoCatalogService } from "../../src/catalog-service.js";
 const runtime = new MagionRuntime();
 
 
+const catalog =
+  new DemoCatalogService();
+
+
 runtime.registerCatalog(
-  new DemoCatalogService()
+  catalog
 );
 
 
@@ -18,8 +22,20 @@ console.assert(
 
 console.assert(
   runtime.getActiveCatalog()
-    .constructor.name === "DemoCatalogService",
+    instanceof DemoCatalogService,
   "Active catalog failed"
+);
+
+
+const results =
+  await runtime
+    .getActiveCatalog()
+    .search("bunny");
+
+
+console.assert(
+  results.length === 1,
+  "Catalog search failed"
 );
 
 
