@@ -9,5 +9,6 @@ export {
 export {
   CatalogService,
   MediaItem,
-  CatalogQuery
+  CatalogQuery,
+  CatalogResult
 } from "./catalog/index.js";

@@ -9,3 +9,7 @@ export {
 export {
   CatalogQuery
 } from "./catalog-query.js";
+
+export {
+  CatalogResult
+} from "./catalog-result.js";
