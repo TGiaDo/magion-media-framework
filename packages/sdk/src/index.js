@@ -7,5 +7,6 @@ export {
 } from "./provider/index.js";
 
 export {
-  CatalogService
+  CatalogService,
+  MediaItem
 } from "./catalog/index.js";
