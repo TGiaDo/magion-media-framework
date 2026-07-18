@@ -17,6 +17,9 @@ importers:
       '@magion/core':
         specifier: workspace:*
         version: link:../core
+      '@magion/engine':
+        specifier: workspace:*
+        version: link:../engine
       '@magion/sdk':
         specifier: workspace:*
         version: link:../sdk

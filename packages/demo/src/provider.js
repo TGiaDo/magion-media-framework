@@ -1,3 +1,4 @@
+import { PlaybackSource } from "@magion/engine";
 import { demoManifest } from "./manifest.js";
 import { demoCatalog } from "./catalog.js";
 
@@ -48,11 +49,11 @@ export class DemoProvider {
       return null;
     }
 
-    return {
+    return new PlaybackSource({
       id: media.id,
-      type: "video/mp4",
-      url: null
-    };
+      url: null,
+      mimeType: "video/mp4"
+    });
   }
 
   /*

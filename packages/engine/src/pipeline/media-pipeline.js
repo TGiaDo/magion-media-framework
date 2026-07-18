@@ -29,6 +29,22 @@ export class MediaPipeline {
   }
 
 
+  loadPlaybackSource(source) {
+
+    return this.load({
+      title: source.id,
+      url: source.url,
+      type: source.mimeType,
+      metadata: {
+        quality: source.quality,
+        subtitles: source.subtitles,
+        audioTracks: source.audioTracks
+      }
+    });
+
+  }
+
+
   play() {
 
     if (
