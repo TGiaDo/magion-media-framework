@@ -3,6 +3,7 @@ import { PluginSystem } from "./plugin-system.js";
 import { MagionConfig } from "./config.js";
 import { ProviderRegistry } from "./provider/provider-registry.js";
 import { CatalogRegistry } from "./catalog/catalog-registry.js";
+import { ResolverRegistry } from "./resolver/resolver-registry.js";
 
 export class MagionRuntime {
 
@@ -12,6 +13,7 @@ export class MagionRuntime {
     this.plugins = new PluginSystem();
     this.providers = new ProviderRegistry();
     this.catalogs = new CatalogRegistry();
+    this.resolvers = new ResolverRegistry();
   }
 
   registerProvider(provider) {
@@ -106,6 +108,63 @@ export class MagionRuntime {
     }
 
     return catalog.getItem(id);
+
+  }
+
+
+  registerResolver(resolver) {
+
+    return this.resolvers.register(
+      resolver
+    );
+
+  }
+
+
+  getResolver(name) {
+
+    return this.resolvers.get(
+      name
+    );
+
+  }
+
+
+  getResolvers() {
+
+    return this.resolvers.getAll();
+
+  }
+
+
+  getActiveResolver() {
+
+    return this.resolvers.getActive();
+
+  }
+
+
+  setActiveResolver(name) {
+
+    return this.resolvers.setActive(
+      name
+    );
+
+  }
+
+
+  async resolveMedia(id) {
+
+    const resolver =
+      this.getActiveResolver();
+
+    if (!resolver) {
+      throw new Error(
+        "No active resolver"
+      );
+    }
+
+    return resolver.resolve(id);
 
   }
 
