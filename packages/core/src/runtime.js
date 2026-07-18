@@ -60,6 +60,56 @@ export class MagionRuntime {
     return this.catalogs.setActive(name);
   }
 
+
+
+  async getCatalogItems() {
+
+    const catalog =
+      this.getActiveCatalog();
+
+    if (!catalog) {
+      throw new Error(
+        "No active catalog"
+      );
+    }
+
+    return catalog.getCatalog();
+
+  }
+
+
+  async searchCatalog(query) {
+
+    const catalog =
+      this.getActiveCatalog();
+
+    if (!catalog) {
+      throw new Error(
+        "No active catalog"
+      );
+    }
+
+    return catalog.search(query);
+
+  }
+
+
+  async getCatalogItem(id) {
+
+    const catalog =
+      this.getActiveCatalog();
+
+    if (!catalog) {
+      throw new Error(
+        "No active catalog"
+      );
+    }
+
+    return catalog.getItem(id);
+
+  }
+
+
   start() {
     this.events.emit(
       "runtime:start",
