@@ -6,3 +6,7 @@ export { MagionConfig } from "./config.js";
 export {
   ProviderRegistry
 } from "./provider/provider-registry.js";
+
+export {
+  CatalogRegistry
+} from "./catalog/index.js";
