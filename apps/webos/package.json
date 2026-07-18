@@ -1,0 +1,8 @@
+{
+  "name": "@magion/app-webos",
+  "version": "0.1.0",
+  "description": "Magion Media application for LG webOS",
+  "type": "module",
+  "main": "./src/index.js",
+  "license": "MIT"
+}
