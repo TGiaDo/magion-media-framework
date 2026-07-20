@@ -197,6 +197,30 @@ export class MagionRuntime {
 
 
 
+  async installAddon(addon) {
+
+    this.registerAddon(addon);
+
+    await addon.initialize();
+
+    for (const provider of addon.getProviders()) {
+      this.registerProvider(provider);
+    }
+
+    for (const catalog of addon.getCatalogs()) {
+      this.registerCatalog(catalog);
+    }
+
+    for (const resolver of addon.getResolvers()) {
+      this.registerResolver(resolver);
+    }
+
+    return addon;
+
+  }
+
+
+
   start() {
     this.events.emit(
       "runtime:start",

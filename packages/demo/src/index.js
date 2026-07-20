@@ -9,3 +9,8 @@ export {
 export {
   DemoResolver
 } from "./resolver/demo-resolver.js";
+
+
+export {
+  DemoAddon
+} from "./addon/demo-addon.js";
