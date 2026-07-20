@@ -3,6 +3,7 @@ import { PluginSystem } from "./plugin-system.js";
 import { MagionConfig } from "./config.js";
 import { ProviderRegistry } from "./provider/provider-registry.js";
 import { CatalogRegistry } from "./catalog/catalog-registry.js";
+import { AddonRegistry } from "./addon/index.js";
 import { ResolverRegistry } from "./resolver/resolver-registry.js";
 
 export class MagionRuntime {
@@ -13,6 +14,7 @@ export class MagionRuntime {
     this.plugins = new PluginSystem();
     this.providers = new ProviderRegistry();
     this.catalogs = new CatalogRegistry();
+    this.addons = new AddonRegistry();
     this.resolvers = new ResolverRegistry();
   }
 
@@ -167,6 +169,32 @@ export class MagionRuntime {
     return resolver.resolve(id);
 
   }
+
+
+  registerAddon(addon) {
+    return this.addons.register(addon);
+  }
+
+
+  getAddon(id) {
+    return this.addons.get(id);
+  }
+
+
+  getAddons() {
+    return this.addons.getAll();
+  }
+
+
+  getActiveAddon() {
+    return this.addons.getActive();
+  }
+
+
+  setActiveAddon(id) {
+    return this.addons.setActive(id);
+  }
+
 
 
   start() {
